@@ -1,5 +1,7 @@
 🌊 SSA Pipe Analysis Tool
+
 Project Overview
+
 This Python script sanitizes SSA (Storm & Sanitary Analysis) CSV exports and evaluates pipe hydraulics using Manning’s equation. It cleans messy SSA output, detects the correct diameter/height column, and computes flow capacity, velocity, and pipe status for drainage and sewer design.
 
 ⭐ Featured
