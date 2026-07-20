@@ -44,11 +44,3 @@ python storm_sanitary_analysis.py
 
 👤 Author
 Gener Francis Lambayan
-
-🏗️ Project Design
-This project follows a clean, modular structure:
-SSA PROJECT/
-│
-├── storm_sanitary_analysis.py   # Main script
-├── ProjectFinal.csv             # SSA data file
-└── README.md                    # Documentation
