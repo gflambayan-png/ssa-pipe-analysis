@@ -24,20 +24,24 @@ def manning_capacity(diameter_m, slope, n=0.013):
     return (1/n) * area * (hydraulic_radius**(2/3)) * (slope**0.5)
 
 ▶️ Example Usage
+
 result = evaluate_pipe("L-PIPE113", 0.0, 0.475, 0.0)
 
 print(result)
 
 Output:
+
 {'Pipe': 'L-PIPE113', 'Flow': 0.0, 'Capacity': 0.475, 'Velocity': 0.0, 'Status': 'OK'}
 
 🏃 How to Run:
+
 Install dependencies:
 pip install pandas
 Run the script:
 python storm_sanitary_analysis.py
 
 🚀 Future Improvements
+
 CSV export for results
 
 Velocity limit warnings
