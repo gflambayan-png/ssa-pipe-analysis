@@ -1,46 +1,58 @@
-# ssa-pipe-analysis
-# 🌊 SSA Pipe Analysis Tool
+🌊 SSA Pipe Analysis Tool
+Project Overview
+This Python script sanitizes SSA (Storm & Sanitary Analysis) CSV exports and evaluates pipe hydraulics using Manning’s equation. It cleans messy SSA output, detects the correct diameter/height column, and computes flow capacity, velocity, and pipe status for drainage and sewer design.
 
-A Python tool for sanitizing Storm & Sanitary Analysis (SSA) CSV exports and evaluating pipe hydraulics using Manning’s equation.  
-It automatically cleans SSA output, detects the correct diameter/height column, and computes flow capacity, velocity, and pipe status safely.
+⭐ Featured
+SSA CSV cleanup and formatting
 
----
+Automatic header + diameter/height detection
 
-## ⚙️ Features
-- 🧹 Automatic SSA CSV sanitization  
-- 🧾 Header row detection  
-- 📏 Auto-detection of pipe height/diameter column  
-- 🔢 Cleans numeric fields (slope, height, flow)  
-- 💧 Safe Manning capacity and velocity calculations  
-- 🚫 Skips junk rows, blank rows, and invalid pipes  
-- 📊 Outputs pipe flow, capacity, velocity, and status  
+Manning’s equation capacity + velocity calculation
 
----
+Filters junk rows and invalid pipes
 
-## 🧰 Requirements
-- Python 3.10+
-- pandas  
+Clear, reusable hydraulic evaluation functions
 
+Easy to extend into larger stormwater or sanitary analysis tools
+
+🧠 Core Function (Manning Capacity Example)
+def manning_capacity(diameter_m, slope, n=0.013):
+    radius = diameter_m / 2
+    area = 3.14159 * radius**2
+    hydraulic_radius = radius / 2
+    return (1/n) * area * (hydraulic_radius**(2/3)) * (slope**0.5)
+▶️ Example Usage
+result = evaluate_pipe("L-PIPE113", 0.0, 0.475, 0.0)
+print(result)
+Output:
+{'Pipe': 'L-PIPE113', 'Flow': 0.0, 'Capacity': 0.475, 'Velocity': 0.0, 'Status': 'OK'}
+🏃 How to Run:
 Install dependencies:
-
 pip install pandas
-
-▶️ Usage
-Place your SSA CSV file in the project folder and run:
+Run the script:
 python storm_sanitary_analysis.py
 
-📈 Example Output
-{'Pipe': 'L-PIPE113', 'Flow': 0.0, 'Capacity': 0.475, 'Velocity': 0.0, 'Status': 'OK'}
-{'Pipe': 'L-PIPE115', 'Flow': 0.0, 'Capacity': 0.514, 'Velocity': 0.0, 'Status': 'OK'}
-
 🚀 Future Improvements
-- Export results to CSV
+CSV export for results
 
-- Add velocity limit warnings
+Velocity limit warnings
 
-- Add undersized pipe alerts
+Undersized pipe alerts
 
-- Add storm/sanitary flow calculators
+Storm/sanitary flow calculators
+
+Optional hydraulic plots
+
+🎓 What I Learned
+Applying Manning’s equation in Python
+
+Cleaning and sanitizing engineering datasets
+
+Structuring reusable hydraulic functions
+
+Writing clear documentation
+
+Connecting Civil Engineering concepts with automation
 
 👤 Author
 Gener Francis Lambayan
