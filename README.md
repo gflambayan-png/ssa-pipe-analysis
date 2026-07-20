@@ -16,16 +16,19 @@ Clear, reusable hydraulic evaluation functions
 Easy to extend into larger stormwater or sanitary analysis tools
 
 🧠 Core Function (Manning Capacity Example)
+
 def manning_capacity(diameter_m, slope, n=0.013):
     radius = diameter_m / 2
     area = 3.14159 * radius**2
     hydraulic_radius = radius / 2
     return (1/n) * area * (hydraulic_radius**(2/3)) * (slope**0.5)
+
 ▶️ Example Usage
 result = evaluate_pipe("L-PIPE113", 0.0, 0.475, 0.0)
 print(result)
 Output:
 {'Pipe': 'L-PIPE113', 'Flow': 0.0, 'Capacity': 0.475, 'Velocity': 0.0, 'Status': 'OK'}
+
 🏃 How to Run:
 Install dependencies:
 pip install pandas
